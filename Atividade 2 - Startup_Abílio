@@ -28,12 +28,11 @@ create table programador(
 	data_nascimento date not null,
 	email varchar(35) not null,
 	unique(email),
-	primary key(nome_programador));
+	primary key(id_programador));
 	
 create table programador_linguagem(
-	id_programador int not null auto_increment,
+	id_programador int not null,
 	id_linguagem int not null,
-	primary key(id_programador));
 	
 -- populando/carregando as tabelas do banco de dados
 
