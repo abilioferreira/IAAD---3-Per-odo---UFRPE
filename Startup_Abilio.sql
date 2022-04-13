@@ -32,7 +32,7 @@ create table programador(
 	
 create table programador_linguagem(
 	id_programador int not null,
-	id_linguagem int not null,
+	id_linguagem int not null);
 	
 -- populando/carregando as tabelas do banco de dados
 
