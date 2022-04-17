@@ -1,0 +1,71 @@
+create schema condominio;
+
+use condominio;
+
+-- criando as tabelas
+
+create table administradora(
+  cnpj int not null,
+  Nome varchar(30),
+  Endereco varchar(30),
+  primary key(cpnj));
+
+create table edificio(
+  cod_edificio int not null,
+  Nome varchar(30),
+  Endereco varchar(30),
+  cpf_sindico int not null,
+  cnpj_admin int,
+  primary key(cod_edificio));
+  
+create table apartamento(
+  cod_apartamento int not null,
+  cod_edificio int not null,
+  cpf_proprietario int not null,
+  numeroapt int not null,
+  qtd_quartos int not null,
+  qtd_banheiros int not null,
+  primary key(cod_apartamento));
+  
+create table pessoa(
+  cpf int not null,
+  nome varchar(30),
+  genero char,
+  data_nascimento date not null,
+  telefone int not null,
+  email varchar(35) not null,
+  unique(email),
+  profissao varchar(30),
+  primary key(cpf));
+  
+create table morador(
+  cod_apartamento int not null;
+  cod_edificio int not null,
+  cpf_morador int not null);
+  
+create table funcionario(
+  cpf_funcionario int not null,
+  cod_edificio int not null,
+  data_admissao date not null,
+  cargoFuncao varchar(30),
+  salario int not null,
+  primary key(cpf_funcionario);
+  
+-- Aplicando a restrição de integridade referencial (chaves estrangeiras - FK)
+
+-- edificio
+alter table edificio add foreign key(cpf_sindico) references morador(cod_apartamento);
+alter table edificio add foreign key(cnpj_admin) references adminstradora(cnpj);
+
+-- apartamento
+alter table Apartamento add foreign key(cod_edificio) references edificio(cod_edificio);
+alter table apartamento add foreign key(cpf_proprietario) references pessoa(cpf);
+
+-- Morador
+alter table morador add foreign key(cod_apartamento) references apartamento(cod_apartamento);
+alter table Morador add foreign key(Cod_edificio) references edificio(cod_edificio);
+alter table Morador add foreign key(Cpf_mordador) references Pessoa(cpf);
+
+-- Funcionario
+alter table funcionario add foreign key(cpf_funcionario) references pessoa(cpf);
+alter table funcionario add foreign key(cpf_funcionario) references pessoa(cpf);
