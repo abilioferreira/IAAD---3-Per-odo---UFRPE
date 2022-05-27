@@ -53,13 +53,13 @@ insert into linguagem_programacao values
     (20006, "Dart", 2011);
     
 insert into programador values
-	(30001, 10001, "Joao Pedro", "M", 23/06/1993, "joaop@mail.com"),
-    (30002, 10001, "Paula Silva", "F", 10/01/1986, "paulas@mail.com"),
-    (30003, 10003, "Renata Vieira", "F", 05/07/1991, "renatav@mail.com"),
-    (30004, 10004, "Felipe Santos", "M", 25/11/1976, "felipes@mail.com"),
-    (30005, 10001, "Ana Cristina", "F", 19/02/1968, "anac@mail.com"),
-    (30006, 10004, "Alexandre Alves", "M", 07/07/1988, "alexandrea@mail.com"),
-    (30007, 10002, "Laura Marques", "F", 04/10/1987, "lauram@mail.com");
+	(30001, 10001, "Joao Pedro", "M", 23-06-1993, "joaop@mail.com"),
+    (30002, 10001, "Paula Silva", "F", 10-01-1986, "paulas@mail.com"),
+    (30003, 10003, "Renata Vieira", "F", 05-07-1991, "renatav@mail.com"),
+    (30004, 10004, "Felipe Santos", "M", 25-11-1976, "felipes@mail.com"),
+    (30005, 10001, "Ana Cristina", "F", 19-02-1968, "anac@mail.com"),
+    (30006, 10004, "Alexandre Alves", "M", 07-07-1988, "alexandrea@mail.com"),
+    (30007, 10002, "Laura Marques", "F", 04-10-1987, "lauram@mail.com");
 
 -- Aplicando a restrição de integridade referencial (chaves estrangeiras - FK)
 alter table programador add foreign key(id_startup) references startup(id_startup);
