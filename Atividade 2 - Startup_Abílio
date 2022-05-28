@@ -9,7 +9,7 @@ use startup_Abilio;
 -- Criando as tabelas
 
 create table startup(
-	id_startup int not null auto_increment,
+	id_startup int not null,
 	nome_startup varchar(30),
 	cidade_sede varchar(30),
 	primary key(id_startup));
